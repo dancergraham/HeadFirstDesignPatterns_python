@@ -1,8 +1,10 @@
 class Subject():
     def register_observer():
         raise NotImplementedError
+
     def remove_observer():
         raise NotImplementedError
+
     def notify_observers():
         raise NotImplementedError
 
@@ -21,17 +23,17 @@ class WeatherData(Subject):
     def __init__(self):
         self._observers = []
 
-    def register_observer(self, observer:Observer):
+    def register_observer(self, observer: Observer):
         self._observers.append(observer)
 
-    def remove_observer(self, observer:Observer):
+    def remove_observer(self, observer: Observer):
         self._observers.remove(observer)
 
     def notify_observers(self):
         for observer in self._observers:
             observer.update(self._temperature, self._humidity, self._pressure)
 
-    def set_measurements(self, temperature: float, humidity:float, pressure:float):
+    def set_measurements(self, temperature: float, humidity: float, pressure: float):
         self._temperature = temperature
         self._humidity = humidity
         self._pressure = pressure
@@ -46,9 +48,10 @@ class CurrentConditionsDisplay(DisplayElement, Observer):
         weather_data.register_observer(self)
 
     def display(self):
-        print(f"Current conditions: {self._temperature:.1f}F degrees and {self._humidity:.1f}% humidity")
+        print(
+            f"Current conditions: {self._temperature:.1f}F degrees and {self._humidity:.1f}% humidity")
 
-    def update(self, temperature: float, humidity:float, pressure:float):
+    def update(self, temperature: float, humidity: float, pressure: float):
         self._temperature = temperature
         self._humidity = humidity
         self.display()
