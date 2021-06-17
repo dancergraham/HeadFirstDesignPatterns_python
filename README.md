@@ -4,7 +4,7 @@
 
 I am aiming for a literal translation without trying to make the code pythonic beyond, e.g. using python conventions for `ClassNames` and `method_names` and putting all of the code in a single file where it makes sense to do so.
 
-### Sample Code : Java 
+## Sample Code : Java
 
 From the book 📖:
 
@@ -12,33 +12,33 @@ From the book 📖:
 package headfirst.designpatterns.strategy;
 
 public abstract class Duck {
-	FlyBehavior flyBehavior;
-	QuackBehavior quackBehavior;
+    FlyBehavior flyBehavior;
+    QuackBehavior quackBehavior;
 
-	public Duck() {
-	}
+    public Duck() {
+    }
 
-	public void setFlyBehavior(FlyBehavior fb) {
-		flyBehavior = fb;
-	}
+    public void setFlyBehavior(FlyBehavior fb) {
+        flyBehavior = fb;
+    }
 
-	public void setQuackBehavior(QuackBehavior qb) {
-		quackBehavior = qb;
-	}
+    public void setQuackBehavior(QuackBehavior qb) {
+        quackBehavior = qb;
+    }
 
-	abstract void display();
+    abstract void display();
 
-	public void performFly() {
-		flyBehavior.fly();
-	}
+    public void performFly() {
+        flyBehavior.fly();
+    }
 
-	public void performQuack() {
-		quackBehavior.quack();
-	}
+    public void performQuack() {
+        quackBehavior.quack();
+    }
 
-	public void swim() {
-		System.out.println("All ducks float, even decoys!");
-	}
+    public void swim() {
+        System.out.println("All ducks float, even decoys!");
+    }
 }
 ```
 
