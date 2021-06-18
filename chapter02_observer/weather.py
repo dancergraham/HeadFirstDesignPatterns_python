@@ -1,4 +1,4 @@
-class Subject():
+class Subject:
     def register_observer():
         raise NotImplementedError
 
@@ -9,12 +9,12 @@ class Subject():
         raise NotImplementedError
 
 
-class Observer():
+class Observer:
     def update():
         raise NotImplementedError
 
 
-class DisplayElement():
+class DisplayElement:
     def display():
         raise NotImplementedError
 
@@ -49,7 +49,8 @@ class CurrentConditionsDisplay(DisplayElement, Observer):
 
     def display(self):
         print(
-            f"Current conditions: {self._temperature:.1f}F degrees and {self._humidity:.1f}% humidity")
+            f"Current conditions: {self._temperature:.1f}F degrees and {self._humidity:.1f}% humidity"
+        )
 
     def update(self, temperature: float, humidity: float, pressure: float):
         self._temperature = temperature
@@ -60,11 +61,11 @@ class CurrentConditionsDisplay(DisplayElement, Observer):
 def weather_station():
     weather_data = WeatherData()
     current_display = CurrentConditionsDisplay(weather_data)
- #   statistics_display = StatisticsDisplay(weather_data)
+    #   statistics_display = StatisticsDisplay(weather_data)
     weather_data.set_measurements(80, 65, 30.4)
     weather_data.set_measurements(82, 70, 29.2)
     weather_data.set_measurements(78, 90, 29.2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     weather_station()

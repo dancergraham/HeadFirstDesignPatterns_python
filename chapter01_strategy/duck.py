@@ -1,5 +1,4 @@
-
-class FlyBehavior():
+class FlyBehavior:
     def fly(self):
         raise NotImplementedError
 
@@ -19,7 +18,7 @@ class FlyRocketPowered(FlyBehavior):
         print("I'm flying with a rocket!'")
 
 
-class QuackBehavior():
+class QuackBehavior:
     def quack(self):
         raise NotImplementedError
 
@@ -39,7 +38,7 @@ class Squeak(QuackBehavior):
         print("Squeak")
 
 
-class Duck():
+class Duck:
     fly_behavior = None
     quack_behavior = None
 
@@ -89,5 +88,5 @@ def mini_duck_simulator():
     model.perform_fly()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     mini_duck_simulator()
