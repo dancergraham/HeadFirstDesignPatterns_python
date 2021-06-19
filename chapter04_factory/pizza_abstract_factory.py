@@ -37,7 +37,7 @@ class Clams(abc.ABC):
 
 
 class FreshClams(Clams):
-    def __str__self():
+    def __str__(self):
         return "Fresh Clams from Long Island Sound"
 
 
@@ -114,68 +114,84 @@ class SlicedPepperoni(Pepperoni):
 class PizzaIngredientFactory(abc.ABC):
     def create_dough():
         raise NotImplementedError
+
     def create_sauce():
         raise NotImplementedError
+
     def create_cheese():
         raise NotImplementedError
+
     def create_veggies():
         raise NotImplementedError
+
     def create_pepperoni():
         raise NotImplementedError
+
     def create_clam():
         raise NotImplementedError
 
 
 class ChicagoPizzaIngredientFactory(PizzaIngredientFactory):
-    def create_dough():
+    def create_dough(self):
         return ThickCrustDough()
-    def create_sauce():
+
+    def create_sauce(self):
         return PlumTomatoSauce()
-    def create_cheese():
+
+    def create_cheese(self):
         return MozzarellaCheese()
-    def create_veggies():
-        return[BlackOlives(), Spinach(), Eggplant()]
-    def create_pepperoni():
+
+    def create_veggies(self):
+        return [BlackOlives(), Spinach(), Eggplant()]
+
+    def create_pepperoni(self):
         return SlicedPepperoni()
-    def create_clam():
+
+    def create_clam(self):
         return FrozenClams()
 
 
 class NYPizzaIngredientFactory(PizzaIngredientFactory):
-    def create_dough():
+    def create_dough(self):
         return ThinCrustDough()
-    def create_sauce():
+
+    def create_sauce(self):
         return MarinaraSauce()
-    def create_cheese():
+
+    def create_cheese(self):
         return ReggianoCheese()
-    def create_veggies():
-        return[Garlic(), Onion(), Mushroom(), RedPepper()]
-    def create_pepperoni():
+
+    def create_veggies(self):
+        return [Garlic(), Onion(), Mushroom(), RedPepper()]
+
+    def create_pepperoni(self):
         return SlicedPepperoni()
-    def create_clam():
+
+    def create_clam(self):
         return FreshClams()
 
 
 class Pizza:
-    def __init__(self):
+    def __init__(self, ingredient_factory):
+        self.ingredient_factory = ingredient_factory
         self.name = None
         self.dough = None
         self.sauce = None
         self.cheese = None
         self.veggies = []
         self.pepperoni = None
-        self.clams = None
-    
-    def prepare():
+        self.clam = None
+
+    def prepare(self):
         raise NotImplementedError
 
-    def bake():
+    def bake(self):
         print("Bake for 25 minutes at 350")
 
-    def cut():
+    def cut(self):
         print("Cutting the pizza into diagonal slices")
 
-    def box():
+    def box(self):
         print("Place pizza in official PizzaStore box")
 
     def set_name(self, name):
@@ -186,32 +202,62 @@ class Pizza:
 
     def __str__(self):
         result = []
-        result.append("---- " + name + " ----\n")
+        result.append("---- " + self.name + " ----")
         if self.dough:
             result.append(self.dough)
-            result.append("\n")
-        
+
         if self.sauce:
             result.append(self.sauce)
-            result.append("\n")
-        
+
         if self.cheese:
             result.append(self.cheese)
-            result.append("\n")
-        
+
         if self.veggies:
-            result.append(", ".join(self.veggies))
-            result.append("\n")
-        
+            result.append(", ".join(map(str,self.veggies)))
+
         if self.clam:
             result.append(self.clam)
-            result.append("\n")
-        
+
         if self.pepperoni:
             result.append(self.pepperoni)
-            result.append("\n")
         
-        return "".join(result)
+        return "\n".join(map(str, result))+"\n"
+
+
+class CheesePizza(Pizza):
+    def prepare(self):
+        print(f"Preparing {self.name}")
+        self.dough = self.ingredient_factory.create_dough()
+        self.sauce = self.ingredient_factory.create_sauce()
+        self.cheese = self.ingredient_factory.create_cheese()
+
+
+class ClamPizza(Pizza):
+    def prepare(self):
+        print(f"Preparing {self.name}")
+        self.dough = self.ingredient_factory.create_dough()
+        self.sauce = self.ingredient_factory.create_sauce()
+        self.cheese = self.ingredient_factory.create_cheese()
+        self.clam = self.ingredient_factory.create_clam()
+
+
+class VeggiePizza(Pizza):
+    def prepare(self):
+        print(f"Preparing {self.name}")
+        self.dough = self.ingredient_factory.create_dough()
+        self.sauce = self.ingredient_factory.create_sauce()
+        self.cheese = self.ingredient_factory.create_cheese()
+        self.veggies = self.ingredient_factory.create_veggies()
+
+
+class PepperoniPizza(Pizza):
+    def prepare(self):
+        print(f"Preparing {self.name}")
+        self.dough = self.ingredient_factory.create_dough()
+        self.sauce = self.ingredient_factory.create_sauce()
+        self.cheese = self.ingredient_factory.create_cheese()
+        self.veggies = self.ingredient_factory.create_veggies()
+        self.pepperoni = self.ingredient_factory.create_pepperoni()
 
 
 class PizzaStore:
@@ -220,7 +266,7 @@ class PizzaStore:
 
     def order_pizza(self, type):
         pizza = self.create_pizza(type)
-        print(f"--- Making a {pizza.get_name()} ---")
+        print(f"--- Making a {pizza.name} ---")
         pizza.prepare()
         pizza.bake()
         pizza.cut()
@@ -232,5 +278,64 @@ class ChicagoPizzaStore(PizzaStore):
     def create_pizza(self, item):
         pizza = None
         ingredient_factory = ChicagoPizzaIngredientFactory()
-        if item == 'cheese':
-            pizza = new Chee
+        if item == "cheese":
+            pizza = CheesePizza(ingredient_factory)
+            pizza.name = "Chicago Style Cheese Pizza"
+        elif item == "veggie":
+            pizza = VeggiePizza(ingredient_factory)
+            pizza.name = "Chicago Style Veggie Pizza"
+        elif item == "clam":
+            pizza = ClamPizza(ingredient_factory)
+            pizza.name = "Chicago Style Clam Pizza"
+        elif item == "pepperoni":
+            pizza = PepperoniPizza(ingredient_factory)
+            pizza.name = "Chicago Style Pepperoni Pizza"
+        return pizza
+
+
+class NYPizzaStore(PizzaStore):
+    def create_pizza(self, item):
+        pizza = None
+        ingredient_factory = NYPizzaIngredientFactory()
+        if item == "cheese":
+            pizza = CheesePizza(ingredient_factory)
+            pizza.name = "New York Style Cheese Pizza"
+        elif item == "veggie":
+            pizza = VeggiePizza(ingredient_factory)
+            pizza.name = "New York Style Veggie Pizza"
+        elif item == "clam":
+            pizza = ClamPizza(ingredient_factory)
+            pizza.name = "New York Style Clam Pizza"
+        elif item == "pepperoni":
+            pizza = PepperoniPizza(ingredient_factory)
+            pizza.name = "New York Style Pepperoni Pizza"
+        return pizza
+
+
+def pizza_test_drive():
+    ny_store = NYPizzaStore()
+    chicago_store = ChicagoPizzaStore()
+
+    pizza = ny_store.order_pizza("cheese")
+    print(f"Joel ordered a {pizza}")
+    pizza = chicago_store.order_pizza("cheese")
+    print(f"Joel ordered a {pizza}")
+
+    pizza = ny_store.order_pizza("clam")
+    print(f"Joel ordered a {pizza}")
+    pizza = chicago_store.order_pizza("clam")
+    print(f"Joel ordered a {pizza}")
+
+    pizza = ny_store.order_pizza("pepperoni")
+    print(f"Joel ordered a {pizza}")
+    pizza = chicago_store.order_pizza("pepperoni")
+    print(f"Joel ordered a {pizza}")
+
+    pizza = ny_store.order_pizza("veggie")
+    print(f"Joel ordered a {pizza}")
+    pizza = chicago_store.order_pizza("veggie")
+    print(f"Joel ordered a {pizza}")
+
+
+if __name__ == "__main__":
+    pizza_test_drive()
