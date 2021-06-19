@@ -155,4 +155,82 @@ class NYPizzaIngredientFactory(PizzaIngredientFactory):
     def create_clam():
         return FreshClams()
 
+
+class Pizza:
+    def __init__(self):
+        self.name = None
+        self.dough = None
+        self.sauce = None
+        self.cheese = None
+        self.veggies = []
+        self.pepperoni = None
+        self.clams = None
+    
+    def prepare():
+        raise NotImplementedError
+
+    def bake():
+        print("Bake for 25 minutes at 350")
+
+    def cut():
+        print("Cutting the pizza into diagonal slices")
+
+    def box():
+        print("Place pizza in official PizzaStore box")
+
+    def set_name(self, name):
+        self.name = name
+
+    def get_name(self):
+        return self.name
+
+    def __str__(self):
+        result = []
+        result.append("---- " + name + " ----\n")
+        if self.dough:
+            result.append(self.dough)
+            result.append("\n")
         
+        if self.sauce:
+            result.append(self.sauce)
+            result.append("\n")
+        
+        if self.cheese:
+            result.append(self.cheese)
+            result.append("\n")
+        
+        if self.veggies:
+            result.append(", ".join(self.veggies))
+            result.append("\n")
+        
+        if self.clam:
+            result.append(self.clam)
+            result.append("\n")
+        
+        if self.pepperoni:
+            result.append(self.pepperoni)
+            result.append("\n")
+        
+        return "".join(result)
+
+
+class PizzaStore:
+    def create_pizza(self, item):
+        raise NotImplementedError
+
+    def order_pizza(self, type):
+        pizza = self.create_pizza(type)
+        print(f"--- Making a {pizza.get_name()} ---")
+        pizza.prepare()
+        pizza.bake()
+        pizza.cut()
+        pizza.box()
+        return pizza
+
+
+class ChicagoPizzaStore(PizzaStore):
+    def create_pizza(self, item):
+        pizza = None
+        ingredient_factory = ChicagoPizzaIngredientFactory()
+        if item == 'cheese':
+            pizza = new Chee
