@@ -213,15 +213,15 @@ class Pizza:
             result.append(self.cheese)
 
         if self.veggies:
-            result.append(", ".join(map(str,self.veggies)))
+            result.append(", ".join(map(str, self.veggies)))
 
         if self.clam:
             result.append(self.clam)
 
         if self.pepperoni:
             result.append(self.pepperoni)
-        
-        return "\n".join(map(str, result))+"\n"
+
+        return "\n".join(map(str, result)) + "\n"
 
 
 class CheesePizza(Pizza):
