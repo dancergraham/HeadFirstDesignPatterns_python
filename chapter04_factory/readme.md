@@ -2,6 +2,8 @@
 
 **Simple Factory**: A class which chooses which product class to instantiate and return, based upon method parameters.
 
+The Python standard library contains multiple references to factory objects, for instances in [dataclasses](https://docs.python.org/3/library/dataclasses.html?highlight=factory)
+
 **Factory Method**: Defines an interface for creating an object, but lets subclasses decide which class to instantiate. The Factory method lets a class defer instantiation to subclasses.
 
 For instance the `PizzaStore` abstract class in this repo provides an abstract `create_pizza` interface for creating one product.  
