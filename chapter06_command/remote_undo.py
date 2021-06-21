@@ -24,7 +24,7 @@ class LightOnCommand(Command):
     def execute(self):
         self.level = self.light.get_level()
         self.light.on()
- 
+
     def undo(self):
         self.light.dim(self.level)
 
@@ -36,13 +36,13 @@ class LightOffCommand(Command):
     def execute(self):
         self.level = self.light.get_level()
         self.light.off()
- 
+
     def undo(self):
         self.light.dim(self.level)
 
 
-class Light():
-    def __init__(self, location:str):
+class Light:
+    def __init__(self, location: str):
         self.location = location
         self.level = 0
 
@@ -60,12 +60,12 @@ class Light():
             self.off()
         else:
             print(f"Light is dimmed to {self.level}%")
-    
+
     def get_level(self):
         return self.level
 
 
-class RemoteControlWithUndo():
+class RemoteControlWithUndo:
     """The Invoker"""
 
     def __init__(self) -> None:
@@ -91,17 +91,21 @@ class RemoteControlWithUndo():
     def __str__(self) -> str:
         buffer = []
         buffer.append("\n------ Remote Control -------\n")
-        for i, (on_command, off_command) in enumerate(zip(self.on_commands, self.off_commands)):
-            buffer.append(f"[slot {i}] {on_command.__class__.__name__}" +
-				f"    {off_command.__class__.__name__}\n")
-		
+        for i, (on_command, off_command) in enumerate(
+            zip(self.on_commands, self.off_commands)
+        ):
+            buffer.append(
+                f"[slot {i}] {on_command.__class__.__name__}"
+                + f"    {off_command.__class__.__name__}\n"
+            )
+
         buffer.append(f"[undo] {self.undo_command.__class__.__name__}\n")
         return "".join(buffer)
 
 
 def remote_loader():
-    remoteControl =  RemoteControlWithUndo()
-    living_room_light =  Light("Living Room")
+    remoteControl = RemoteControlWithUndo()
+    living_room_light = Light("Living Room")
     living_room_light_on = LightOnCommand(living_room_light)
     living_room_light_off = LightOffCommand(living_room_light)
 
@@ -116,5 +120,6 @@ def remote_loader():
     print(remoteControl)
     remoteControl.undo_button_was_pushed()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     remote_loader()
