@@ -66,6 +66,6 @@ class Duck():
     def perform_quack(self):
         self.quack_behavior.quack()
 
-    def swim():
+    def swim(self):
         print("All ducks float, even decoys! 〰🦆〰")
 ```
