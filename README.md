@@ -69,3 +69,18 @@ class Duck():
     def swim(self):
         print("All ducks float, even decoys! 〰🦆〰")
 ```
+
+## Object Oriented Design Principles
+
+By rough order of personal preference
+
+- Encapsulate what varies
+- Open-Closed Principle: Open for extension, closed for modification
+- Program to an interface, not to an implementation
+- Favour composition over inheritence
+- Dependency Inversion Principle
+- Depend upon abstractions
+- The Hollywood Principle : _"Don't call us, we'll call you"_
+- One Class, One Responsibility Principle
+- Single Responsibility Principle
+- Principle of Least Knowledge
