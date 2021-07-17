@@ -42,14 +42,8 @@ class BeatModel(BeatModelInterface):
         clip = 'clap.wav'
 
     def initialize():
-        try: 
-            File resource = new File("clap.wav")
-            clip = (Clip) AudioSystem.getLine(new Line.Info(Clip.class))
-            clip.open(AudioSystem.getAudioInputStream(resource))
-        except Exception as ex:
-            print("Error: Can't load clip")
-            print(ex)
-
+        "no need to initialise the clip for the playsound module"
+        pass
 
 def dj_test_drive():
     model = BeatModel()
