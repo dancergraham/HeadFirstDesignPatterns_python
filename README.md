@@ -7,7 +7,7 @@ I am aiming for a literal translation without trying to make the code pythonic b
 ## Sample Code : Java
 
 From the book 📖:
-
+ 
 ```java
 package headfirst.designpatterns.strategy;
 
