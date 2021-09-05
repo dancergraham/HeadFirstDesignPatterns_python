@@ -87,4 +87,4 @@ By rough order of personal preference
 
 ## Model View Controller (MVC)
 
-I started to work on the MVC pattern here but have a (small complete MVC implementation in JavaScript)[https://github.com/dancergraham/HeadFirstJs/blob/master/battleship2D.js] in another repo. 
+I started to work on the MVC pattern here but have a [small complete MVC implementation in JavaScript](https://github.com/dancergraham/HeadFirstJs/blob/master/battleship2D.js) in another repo. 
