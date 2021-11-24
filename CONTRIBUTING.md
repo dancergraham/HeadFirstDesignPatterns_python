@@ -1,4 +1,5 @@
 # Contributing
 
-I welcome feedback : thoughts, comments, issues or pull-requests improving the existing code and documentation. 
-I intend to work my way through the remaining chapters in 2021 and am likely to refuse pull requests for new chapters or design patterns I have not yet attempted myself unless I have stopped working on it!  
+Please contribute : I welcome feedback : thoughts, comments, issues or pull requests improving the code and documentation. 
+
+I have now finished my initial work on this and am open to pull requests for new chapters or design patterns I have not yet attempted myself.
