@@ -2,7 +2,7 @@
 
 > **Strategy**: defines a family of algorithms, encapsulates each one and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
 
-<details><summary>Class Diagram (install mermaid to view)</summary><p>
+### Class Diagram
 
 ```mermaid
 classDiagram
@@ -25,7 +25,6 @@ Strategy "1" <|.. "*" ConcreteStrategyB
     }
 ```
 
-</p></details>
 
 ## Use in Python
 
