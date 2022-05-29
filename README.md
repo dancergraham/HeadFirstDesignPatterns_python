@@ -1,9 +1,11 @@
 # HeadFirstDesignPatterns_python
 
-<img src="images\learning.oreilly.jpg" alt="Head First Design Patterns Second Edition" width="200" align="right">Example code from [Head First Design Patterns second edition](https://www.wickedlysmart.com/head-first-design-patterns/) translated to python to help me understand and memorise the patterns.  
+<img src="images\learning.oreilly.jpg" alt="Head First Design Patterns Second Edition" width="200" align="right">Example code from [Head First Design Patterns second edition](https://www.wickedlysmart.com/head-first-design-patterns/) translated to python to help me understand and memorise the patterns.
+
+Includes some examples of pattern usage from the Python standard library and pypi.
 
 > **Note**
-> I am aiming for a literal translation without trying to make the code pythonic beyond, e.g. using python conventions for `ClassNames` and `method_names` and putting all of the code in a single file where it makes sense to do so.
+> I am aiming for a reasonably literal translation whilst trying to make the code a little more pythonic by, e.g. using python conventions for `ClassNames` and `method_names` and putting all of the code in a single file where it makes sense to do so.
 
 ## Sample Code : Java
 
