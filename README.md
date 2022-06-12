@@ -7,6 +7,26 @@ Includes some examples of pattern usage from the Python standard library and pyp
 > **Note**
 > I am aiming for a reasonably literal translation whilst trying to make the code a little more pythonic by, e.g. using python conventions for `ClassNames` and `method_names` and putting all of the code in a single file where it makes sense to do so.
 
+## Patterns Implemented
+
+- [x] [Strategy](chapter01_strategy)
+- [x] [Observer](chapter02_observer)
+- [x] [Decorator](chapter03_decorator)
+- [ ] [Factory Method](chapter04_factory)
+- [ ] [Simple Factory](chapter04_factory)
+- [x] [Abstract Factory](chapter04_factory)
+- [x] [Singleton](chapter05_singleton)
+- [x] [Command](chapter06_command)
+- [x] [Adapter](chapter07_adapter_facade)
+- [ ] [Façade](chapter07_adapter_facade)
+- [x] [Template Method](chapter08_template)
+- [x] [Iterator](chapter09_iterator_composite)
+- [ ] [Composite](chapter09_iterator_composite)
+- [x] [State](chapter10_state)
+- [ ] Proxy
+- [ ] [Model View Controller (MVC)](chapter12_compound)
+
+
 ## Sample Code : Java
 
 From the book 📖:
@@ -74,8 +94,6 @@ class Duck():
 ```
 
 ## Object Oriented Design Principles
-
-By rough order of personal preference
 
 - Encapsulate what varies
 - Open-Closed Principle: Open for extension, closed for modification
