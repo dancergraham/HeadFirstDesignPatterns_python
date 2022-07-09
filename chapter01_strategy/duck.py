@@ -39,39 +39,39 @@ class Squeak(QuackBehavior):
 
 
 class Duck:
-    fly_behavior = None
-    quack_behavior = None
+    _fly_behavior = None
+    _quack_behavior = None
 
     def set_fly_behavior(self, fly_behavior):
-        self.fly_behavior = fly_behavior
+        self._fly_behavior = fly_behavior
 
     def set_quack_behavior(self, quack_behavior):
-        self.quack_behavior = quack_behavior
+        self._quack_behavior = quack_behavior
 
-    def display():
+    def display(self):
         raise NotImplementedError
 
     def perform_fly(self):
-        self.fly_behavior.fly()
+        self._fly_behavior.fly()
 
     def perform_quack(self):
-        self.quack_behavior.quack()
+        self._quack_behavior.quack()
 
-    def swim():
+    def swim(self):
         print("All ducks float, even decoys!")
 
 
 class MallardDuck(Duck):
-    fly_behavior = FlyWithWings()
-    quack_behavior = Quack()
+    _fly_behavior = FlyWithWings()
+    _quack_behavior = Quack()
 
     def display(self):
         print("I'm a real Mallard duck")
 
 
 class ModelDuck(Duck):
-    fly_behavior = FlyNoWay()
-    quack_behavior = Squeak()
+    _fly_behavior = FlyNoWay()
+    _quack_behavior = Squeak()
 
     def display(self):
         print("I'm a real Mallard duck")

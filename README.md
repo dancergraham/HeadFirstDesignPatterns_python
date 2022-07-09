@@ -71,23 +71,23 @@ From this repository :
 
 ```python
 class Duck():
-    fly_behavior = None
-    quack_behavior = None
+    _fly_behavior = None
+    _quack_behavior = None
 
     def set_fly_behavior(self, fly_behavior):
-        self.fly_behavior = fly_behavior
+        self._fly_behavior = fly_behavior
 
     def set_quack_behavior(self, quack_behavior):
-        self.quack_behavior = quack_behavior
+        self._quack_behavior = quack_behavior
 
-    def display():
+    def display(self):
         raise NotImplementedError
 
     def perform_fly(self):
-        self.fly_behavior.fly()
+        self._fly_behavior.fly()
 
     def perform_quack(self):
-        self.quack_behavior.quack()
+        self._quack_behavior.quack()
 
     def swim(self):
         print("All ducks float, even decoys! 〰🦆〰")
