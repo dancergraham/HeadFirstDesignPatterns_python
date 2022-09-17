@@ -69,12 +69,36 @@ class MallardDuck(Duck):
         print("I'm a real Mallard duck")
 
 
+class DecoyDuck(Duck):
+    _fly_behavior = FlyNoWay()
+    _quack_behavior = MuteQuack()
+
+    def display(self):
+        print("I'm a duck Decoy")
+
+
 class ModelDuck(Duck):
     _fly_behavior = FlyNoWay()
     _quack_behavior = Squeak()
 
     def display(self):
         print("I'm a real Mallard duck")
+
+
+class RedHeadDuck(Duck):
+    _fly_behavior = FlyWithWings()
+    _quack_behavior = Quack()
+
+    def display(self):
+        print("I'm a real Red Headed duck")
+
+
+class RubberDuck(Duck):
+    _fly_behavior = FlyNoWay()
+    _quack_behavior = Squeak()
+
+    def display(self):
+        print("I'm a rubber duckie")
 
 
 def mini_duck_simulator():
