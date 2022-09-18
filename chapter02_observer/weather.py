@@ -112,12 +112,39 @@ class ForecastDisplay(DisplayElement, Observer):
             print("Watch out for cooler, rainy weather")
 
 
+class HeatIndexDisplay(DisplayElement, Observer):
+    def __init__(self, weather_data):
+        self.heat_index = 0.
+        self._weather_data = weather_data
+        weather_data.register_observer(self)
+
+    def update(self, temp, humidity, pressure):
+        self.heat_index = self._compute_heat_index(temp, humidity)
+        self.display()
+
+    def display(self):
+        print(f"Heat index is {self.heat_index:.5f}")
+
+    @classmethod
+    def _compute_heat_index(cls, t, rh):
+        index = ((16.923 + (0.185212 * t) + (5.37941 * rh) - (0.100254 * t * rh)
+                  + (0.00941695 * (t * t)) + (0.00728898 * (rh * rh))
+                  + (0.000345372 * (t * t * rh)) - (0.000814971 * (t * rh * rh)) +
+                  (0.0000102102 * (t * t * rh * rh)) - (0.000038646 * (t * t * t)) +
+                  (0.0000291583 * (rh * rh * rh)) + (0.00000142721 * (t * t * t * rh)) +
+                  (0.000000197483 * (t * rh * rh * rh)) - (0.0000000218429 * (t * t * t * rh * rh)) +
+                  0.000000000843296 * (t * t * rh * rh * rh)) -
+                 (0.0000000000481975 * (t * t * t * rh * rh * rh)))
+        return index
+
+
 def weather_station():
     weather_data = WeatherData()
 
     current_display = CurrentConditionsDisplay(weather_data)
     statistics_display = StatisticsDisplay(weather_data)
     forecast_display = ForecastDisplay(weather_data)
+    heat_index_display = HeatIndexDisplay(weather_data)
 
     weather_data.set_measurements(80, 65, 30.4)
     weather_data.set_measurements(82, 70, 29.2)
