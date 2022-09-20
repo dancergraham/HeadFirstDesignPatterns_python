@@ -1,7 +1,5 @@
 import abc
 
-# TODO : Add Dark roast, Soy, Whip
-
 
 class Beverage(abc.ABC):
     """Base class for all beverages"""
@@ -41,6 +39,15 @@ class HouseBlend(Beverage):
         return 0.89
 
 
+class DarkRoast(Beverage):
+
+    def __init__(self):
+        self.description = "Dark Roast Coffee"
+
+    def cost(self):
+        return 0.99
+
+
 class Mocha(CondimentDecorator):
     def __init__(self, beverage: Beverage):
         self.beverage = beverage
@@ -52,15 +59,46 @@ class Mocha(CondimentDecorator):
         return self.beverage.cost() + 0.20
 
 
+class Whip(CondimentDecorator):
+
+    def __init__(self, beverage):
+        self.beverage = beverage
+
+    def get_description(self):
+        return self.beverage.get_description() + ", Whip"
+
+    def cost(self):
+        return 0.1 + self.beverage.cost()
+
+
+class Soy(CondimentDecorator):
+
+    def __init__(self, beverage):
+        self.beverage = beverage
+
+    def get_description(self):
+        return self.beverage.get_description() + ", Soy"
+
+    def cost(self):
+        return 0.15 + self.beverage.cost()
+
+
 def star_buzz_coffee():
     """Test code"""
     beverage = Espresso()
-    print(beverage.get_description(), beverage.cost())
+    print(beverage.get_description() + f" ${beverage.cost()}")
+
+    beverage2 = DarkRoast()
+    beverage2 = Mocha(beverage2)
+    beverage2 = Mocha(beverage2)
+    beverage2 = Whip(beverage2)
+    print(beverage2.get_description() + f" ${beverage2.cost()}")
 
     beverage3 = HouseBlend()
+    beverage3 = Soy(beverage3)
     beverage3 = Mocha(beverage3)
-    beverage3 = Mocha(beverage3)
-    print(beverage3.get_description(), beverage3.cost())
+    beverage3 = Whip(beverage3)
+    print(beverage3.get_description() + f" ${beverage3.cost()}")
 
 
 if __name__ == "__main__":
