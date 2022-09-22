@@ -11,6 +11,11 @@ class MozzarellaCheese(Cheese):
         return "Shredded Mozzarella"
 
 
+class ParmesanCheese(Cheese):
+    def __str__(self):
+        return "Shredded Parmesan"
+
+
 class ReggianoCheese(Cheese):
     def __str__(self):
         return "Reggiano Cheese"
@@ -112,22 +117,22 @@ class SlicedPepperoni(Pepperoni):
 
 
 class PizzaIngredientFactory(abc.ABC):
-    def create_dough():
+    def create_dough(self):
         raise NotImplementedError
 
-    def create_sauce():
+    def create_sauce(self):
         raise NotImplementedError
 
-    def create_cheese():
+    def create_cheese(self):
         raise NotImplementedError
 
-    def create_veggies():
+    def create_veggies(self):
         raise NotImplementedError
 
-    def create_pepperoni():
+    def create_pepperoni(self):
         raise NotImplementedError
 
-    def create_clam():
+    def create_clam(self):
         raise NotImplementedError
 
 
@@ -264,8 +269,8 @@ class PizzaStore:
     def create_pizza(self, item):
         raise NotImplementedError
 
-    def order_pizza(self, type):
-        pizza = self.create_pizza(type)
+    def order_pizza(self, type_):
+        pizza = self.create_pizza(type_)
         print(f"--- Making a {pizza.name} ---")
         pizza.prepare()
         pizza.bake()
