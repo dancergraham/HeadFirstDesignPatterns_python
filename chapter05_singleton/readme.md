@@ -2,4 +2,11 @@
 
 > **Singleton**: ensures a class has only one instance, and provides a global point of access to it.
 
-My implementation is based this [stackoverflow post](https://stackoverflow.com/questions/6760685/creating-a-singleton-in-python?noredirect=1&lq=1).
+My implementation is based
+this [stackoverflow post](https://stackoverflow.com/questions/6760685/creating-a-singleton-in-python?noredirect=1&lq=1).
+
+## Running the code
+
+```bash
+python chocolate.py
+```
