@@ -24,5 +24,5 @@ high-level cross-platform interface to methods and attributes from the `os`, `sy
 ## Running the code
 
 ```bash
-python duck.py
+python duck_adapter.py
 ```
