@@ -74,7 +74,7 @@ class StreamingPlayer:
         print(f"{self.description} off")
 
     def play(self, arg):
-        if isinstance(arg,  str):
+        if isinstance(arg, str):
             self.movie = arg
             self.current_chapter = 0
             print(self.description + " playing \"" + self.movie + "\"")
@@ -102,3 +102,24 @@ class StreamingPlayer:
 
     def set_surround_audio(self):
         print(f"{self.description} set surround audio")
+
+
+class Projector:
+    def __init__(self, description, player):
+        self.description = description
+        self.player = player
+
+    def __str__(self):
+        return self.description
+
+    def on(self):
+        print(f"{self.description} on")
+
+    def off(self):
+        print(f"{self.description} off")
+
+    def wide_screen_mode(self):
+        print(self.description + " in widescreen mode (16x9 aspect ratio)")
+
+    def tv_mode(self):
+        print(self.description + " in tv mode (4x3 aspect ratio)")

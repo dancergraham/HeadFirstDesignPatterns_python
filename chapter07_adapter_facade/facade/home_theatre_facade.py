@@ -2,7 +2,7 @@ class HomeTheaterFacade:
 
     def __init__(self, amp, tuner,
                  player,
-                 # projector,
+                 projector,
                  # screen,
                  # lights,
                  # popper
@@ -10,7 +10,7 @@ class HomeTheaterFacade:
         self.amp = amp
         self.tuner = tuner
         self.player = player
-        # self.projector = projector
+        self.projector = projector
         # self.screen = screen
         # self.lights = lights
         # self.popper = popper
@@ -21,8 +21,8 @@ class HomeTheaterFacade:
         # self.popper.pop()
         # self.lights.dim(10)
         # self.screen.down()
-        # self.projector.on()
-        # self.projector.wideScreenMode()
+        self.projector.on()
+        self.projector.wide_screen_mode()
         self.amp.on()
         # self.amp.set_streaming_player(self.player)
         self.amp.set_surround_sound()
@@ -35,7 +35,7 @@ class HomeTheaterFacade:
         # self.popper.off()
         # self.lights.on()
         # self.screen.up()
-        # self.projector.off()
+        self.projector.off()
         self.amp.off()
         self.player.stop()
         self.player.off()
