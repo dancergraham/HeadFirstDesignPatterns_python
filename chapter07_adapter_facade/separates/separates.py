@@ -47,7 +47,7 @@ class Tuner:
         print(f"{self.description} off")
 
     def set_frequency(self, frequency):
-        print(f"{self.description} setting frequency to {frequency}")
+        print(f"{self.description} setting frequency to frequency")
         self.frequency = frequency
 
     def set_am(self):
@@ -55,3 +55,50 @@ class Tuner:
 
     def set_fm(self):
         print(f"{self.description} setting FM mode")
+
+
+class StreamingPlayer:
+    def __init__(self, description, amplifier):
+        self.description = description
+        self.amplifier = amplifier
+        self.current_chapter = 0
+        self.movie = None
+
+    def __str__(self):
+        return self.description
+
+    def on(self):
+        print(f"{self.description} on")
+
+    def off(self):
+        print(f"{self.description} off")
+
+    def play(self, arg):
+        if isinstance(arg,  str):
+            self.movie = arg
+            self.current_chapter = 0
+            print(self.description + " playing \"" + self.movie + "\"")
+        elif isinstance(arg, int):
+            if self.movie is None:
+                print(f"{self.description} can't play chapter {arg} no movie selected")
+            else:
+                self.current_chapter = arg
+            print(
+                f"{self.description} playing chapter {self.current_chapter}"
+                + " of \""
+                + self.movie
+                + "\""
+            )
+
+    def stop(self):
+        self.current_chapter = 0
+        print(self.description + " stopped \"" + self.movie + "\"")
+
+    def pause(self):
+        print(self.description + " paused \"" + self.movie + "\"")
+
+    def set_two_channel_audio(self):
+        print(f"{self.description} set two channel audio")
+
+    def set_surround_audio(self):
+        print(f"{self.description} set surround audio")

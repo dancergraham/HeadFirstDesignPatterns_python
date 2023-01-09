@@ -1,7 +1,7 @@
 class HomeTheaterFacade:
 
     def __init__(self, amp, tuner,
-                 # player,
+                 player,
                  # projector,
                  # screen,
                  # lights,
@@ -9,7 +9,7 @@ class HomeTheaterFacade:
                  ):
         self.amp = amp
         self.tuner = tuner
-        # self.player = player
+        self.player = player
         # self.projector = projector
         # self.screen = screen
         # self.lights = lights
@@ -27,8 +27,8 @@ class HomeTheaterFacade:
         # self.amp.set_streaming_player(self.player)
         self.amp.set_surround_sound()
         self.amp.set_volume(5)
-        # self.player.on()
-        # self.player.play(movie)
+        self.player.on()
+        self.player.play(movie)
 
     def end_movie(self):
         print("Shutting movie theater down...")
@@ -37,8 +37,8 @@ class HomeTheaterFacade:
         # self.screen.up()
         # self.projector.off()
         self.amp.off()
-        # self.player.stop()
-        # self.player.off()
+        self.player.stop()
+        self.player.off()
 
     def listen_to_radio(self, frequency):
         print("Tuning in the airwaves...")
