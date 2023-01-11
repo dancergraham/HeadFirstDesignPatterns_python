@@ -1,5 +1,5 @@
 from facade.home_theatre_facade import HomeTheaterFacade
-from separates.separates import Amplifier, Tuner, StreamingPlayer, Projector, Screen, TheaterLights, PopcornPopper
+from subcomponents.separates import Amplifier, Tuner, StreamingPlayer, Projector, Screen, TheaterLights, PopcornPopper
 
 
 def theatre_test_drive():

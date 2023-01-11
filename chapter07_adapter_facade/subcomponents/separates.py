@@ -121,15 +121,13 @@ class CdPlayer:
         if isinstance(arg, str):
             self.title = arg
             self.current_track = 0
-            print(f'{self.description} playing "{self.movie}"')
+            print(f'{self.description} playing "{self.title}"')
         elif isinstance(arg, int):
             if self.title is None:
                 print(f"{self.description} can't play track {self.current_track}, no cd inserted")
             else:
                 self.current_track = arg
-            print(
-                f'{self.description} playing track {self.current_track}'
-            )
+            print(f'{self.description} playing track {self.current_track}')
 
     def eject(self):
         print(f'{self.description} eject')
