@@ -23,6 +23,12 @@ high-level cross-platform interface to methods and attributes from the `os`, `sy
 
 ## Running the code
 
+### Adapter
 ```bash
 python duck_adapter.py
+```
+
+### Facade
+```bash
+python home_theatre.py
 ```

@@ -18,7 +18,7 @@ I have added examples of pattern usage in the Python standard library and pypi -
 - [x] [Singleton](chapter05_singleton)
 - [x] [Command](chapter06_command)
 - [x] [Adapter](chapter07_adapter_facade)
-- [ ] [Façade](chapter07_adapter_facade)
+- [x] [Façade](chapter07_adapter_facade)
 - [x] [Template Method](chapter08_template)
 - [x] [Iterator](chapter09_iterator_composite)
 - [ ] [Composite](chapter09_iterator_composite)
