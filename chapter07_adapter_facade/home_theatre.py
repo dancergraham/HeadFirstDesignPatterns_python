@@ -1,5 +1,5 @@
 from facade.home_theatre_facade import HomeTheaterFacade
-from separates.separates import Amplifier, Tuner, StreamingPlayer, Projector, Screen
+from separates.separates import Amplifier, Tuner, StreamingPlayer, Projector, Screen, TheaterLights
 
 
 def theatre_test_drive():
@@ -8,7 +8,7 @@ def theatre_test_drive():
     player = StreamingPlayer("Streaming Player", amp)
     # cd = CdPlayer("CD Player", amp)
     projector = Projector("Projector", player)
-    # lights = TheaterLights("Theater Ceiling Lights")
+    lights = TheaterLights("Theater Ceiling Lights")
     screen = Screen("Theater Screen")
     # popper = PopcornPopper("Popcorn Popper")
 
@@ -16,7 +16,7 @@ def theatre_test_drive():
                                      player,
                                      projector,
                                      screen,
-                                     # lights,
+                                     lights,
                                      # popper
                                      )
 

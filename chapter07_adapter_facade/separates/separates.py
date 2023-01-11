@@ -124,9 +124,11 @@ class Projector:
     def tv_mode(self):
         print(self.description + " in tv mode (4x3 aspect ratio)")
 
+
 class Screen:
     def __init__(self, description):
         self.description = description
+
     def __str__(self):
         return self.description
 
@@ -135,3 +137,20 @@ class Screen:
 
     def down(self):
         print(f"{self.description} going down")
+
+
+class TheaterLights:
+    def __init__(self, description):
+        self.description = description
+
+    def __str__(self):
+        return self.description
+
+    def on(self):
+        print(f"{self.description} on")
+
+    def off(self):
+        print(f"{self.description} off")
+
+    def dim(self, level):
+        print(f"{self.description} dimming to {level} %")
