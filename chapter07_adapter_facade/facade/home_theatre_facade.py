@@ -5,7 +5,7 @@ class HomeTheaterFacade:
                  projector,
                  screen,
                  lights,
-                 # popper
+                 popper
                  ):
         self.amp = amp
         self.tuner = tuner
@@ -13,12 +13,12 @@ class HomeTheaterFacade:
         self.projector = projector
         self.screen = screen
         self.lights = lights
-        # self.popper = popper
+        self.popper = popper
 
     def watch_movie(self, movie):
         print("Get ready to watch a movie...")
-        # self.popper.on()
-        # self.popper.pop()
+        self.popper.on()
+        self.popper.pop()
         self.lights.dim(10)
         self.screen.down()
         self.projector.on()
@@ -32,7 +32,7 @@ class HomeTheaterFacade:
 
     def end_movie(self):
         print("Shutting movie theater down...")
-        # self.popper.off()
+        self.popper.off()
         self.lights.on()
         self.screen.up()
         self.projector.off()

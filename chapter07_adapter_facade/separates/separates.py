@@ -154,3 +154,20 @@ class TheaterLights:
 
     def dim(self, level):
         print(f"{self.description} dimming to {level} %")
+
+
+class PopcornPopper:
+    def __init__(self, description):
+        self.description = description
+
+    def __str__(self):
+        return self.description
+
+    def on(self):
+        print(f"{self.description} on")
+
+    def off(self):
+        print(f"{self.description} off")
+
+    def pop(self):
+        print(f"{self.description} popping popcorn!")

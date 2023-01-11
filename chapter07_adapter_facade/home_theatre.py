@@ -1,5 +1,5 @@
 from facade.home_theatre_facade import HomeTheaterFacade
-from separates.separates import Amplifier, Tuner, StreamingPlayer, Projector, Screen, TheaterLights
+from separates.separates import Amplifier, Tuner, StreamingPlayer, Projector, Screen, TheaterLights, PopcornPopper
 
 
 def theatre_test_drive():
@@ -10,14 +10,14 @@ def theatre_test_drive():
     projector = Projector("Projector", player)
     lights = TheaterLights("Theater Ceiling Lights")
     screen = Screen("Theater Screen")
-    # popper = PopcornPopper("Popcorn Popper")
+    popper = PopcornPopper("Popcorn Popper")
 
     home_theater = HomeTheaterFacade(amp, tuner,
                                      player,
                                      projector,
                                      screen,
                                      lights,
-                                     # popper
+                                     popper
                                      )
 
     home_theater.watch_movie("Raiders of the Lost Ark")
