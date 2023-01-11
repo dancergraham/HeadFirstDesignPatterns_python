@@ -24,7 +24,7 @@ class HomeTheaterFacade:
         self.projector.on()
         self.projector.wide_screen_mode()
         self.amp.on()
-        # self.amp.set_streaming_player(self.player)
+        self.amp.set_streaming_player(self.player)
         self.amp.set_surround_sound()
         self.amp.set_volume(5)
         self.player.on()
