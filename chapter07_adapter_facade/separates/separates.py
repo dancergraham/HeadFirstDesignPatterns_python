@@ -77,31 +77,68 @@ class StreamingPlayer:
         if isinstance(arg, str):
             self.movie = arg
             self.current_chapter = 0
-            print(self.description + " playing \"" + self.movie + "\"")
+            print(f'{self.description} playing "{self.movie}"')
         elif isinstance(arg, int):
             if self.movie is None:
                 print(f"{self.description} can't play chapter {arg} no movie selected")
             else:
                 self.current_chapter = arg
             print(
-                f"{self.description} playing chapter {self.current_chapter}"
-                + " of \""
-                + self.movie
-                + "\""
+                f'{self.description} playing chapter {self.current_chapter} of "{self.movie}"'
             )
 
     def stop(self):
         self.current_chapter = 0
-        print(self.description + " stopped \"" + self.movie + "\"")
+        print(f'{self.description} stopped "{self.movie}"')
 
     def pause(self):
-        print(self.description + " paused \"" + self.movie + "\"")
+        print(f'{self.description} paused "{self.movie}"')
 
     def set_two_channel_audio(self):
         print(f"{self.description} set two channel audio")
 
     def set_surround_audio(self):
         print(f"{self.description} set surround audio")
+
+
+class CdPlayer:
+    def __init__(self, description, amplifier):
+        self.description = description
+        self.current_track = 0
+        self.amplifier = amplifier
+        self.title = None
+
+    def __str__(self):
+        return self.description
+
+    def on(self):
+        print(f"{self.description} on")
+
+    def off(self):
+        print(f"{self.description} off")
+
+    def play(self, arg):
+        if isinstance(arg, str):
+            self.title = arg
+            self.current_track = 0
+            print(f'{self.description} playing "{self.movie}"')
+        elif isinstance(arg, int):
+            if self.title is None:
+                print(f"{self.description} can't play track {self.current_track}, no cd inserted")
+            else:
+                self.current_track = arg
+            print(
+                f'{self.description} playing track {self.current_track}'
+            )
+
+    def eject(self):
+        print(f'{self.description} eject')
+
+    def stop(self):
+        print(f'{self.description} stopped')
+
+    def pause(self):
+        print(f'{self.description} paused "{self.title}"')
 
 
 class Projector:
@@ -119,10 +156,10 @@ class Projector:
         print(f"{self.description} off")
 
     def wide_screen_mode(self):
-        print(self.description + " in widescreen mode (16x9 aspect ratio)")
+        print(f"{self.description} in widescreen mode (16x9 aspect ratio)")
 
     def tv_mode(self):
-        print(self.description + " in tv mode (4x3 aspect ratio)")
+        print(f"{self.description} in tv mode (4x3 aspect ratio)")
 
 
 class Screen:
