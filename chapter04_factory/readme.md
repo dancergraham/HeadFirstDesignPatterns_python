@@ -24,6 +24,11 @@ Rhino.
 
 For instance the `PizzaIngredientFactory` abstract class defines an interface for a family of products.
 
+** Builder **
+
+When the object creation gets more complex with a number of distinct steps then the Builder pattern comes in, 
+esseantially using a Template method to put all of the creation steps together.
+
 ## Running the code
 
 ```bash
