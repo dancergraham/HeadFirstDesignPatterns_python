@@ -1,6 +1,6 @@
 # Chapter 4: Factory patterns
 
-## Simple Factory
+## Simple Factory 🚧
 
 > A class which chooses which product class to instantiate and return, based upon method parameters.
 
@@ -12,7 +12,7 @@ and [dataclasses](https://docs.python.org/3/library/dataclasses.html#module-data
 are factories for creating classes.
 The Factory Boy package provides easy object creation for Django and for other ORMs.
 
-## Factory Method
+## Factory Method 📋
 
 > Defines an interface for creating an object, but lets subclasses decide which class to
 > instantiate. The Factory method lets a class defer instantiation to subclasses.
@@ -28,14 +28,14 @@ generation and to allow extension through the creation of new factory methods wi
 I took advantage of this to add a new class for the creation of 3D QR codes with my favourite NURBS modelling software
 Rhino - it was super simple once I understood the pattern.
 
-## Abstract Factory
+## Abstract Factory 🏭
 
 > Provides an interface for creating families of related or dependent objects without specifying
 > their concrete classes.
 
 For instance the `PizzaIngredientFactory` abstract class defines an interface for a family of products.
 
-## Builder 👷🏻‍♀️
+## Builder 👷🏻‍♀️🏗️
 
 When the object creation gets more complex with a number of distinct steps then the Builder pattern comes in, 
 esseantially using a Template method to put all of the creation steps together.
