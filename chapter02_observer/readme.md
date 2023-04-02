@@ -15,7 +15,7 @@ to change the subject at all to add new observers.
 
 classDiagram
 
-    Subject <-- Observer : observers
+    Subject --> Observer : observers
     Subject1 <-- Observer1 : subject
     Subject1 <-- Observer2 : subject
     Subject <|-- Subject1
@@ -25,7 +25,7 @@ classDiagram
     Subject : detach(o)
     Subject: notify()
     class Observer{
-      +update()
+      update()
     }
     class Subject1{
       state
