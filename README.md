@@ -25,6 +25,7 @@ I have added examples of pattern usage in the Python standard library and pypi -
 - [x] [State](chapter10_state)
 - [ ] Proxy
 - [ ] [Model View Controller (MVC)](chapter12_compound)
+- [ ] [Manager](chapter14_leftover) _(Bonus Pattern)_
 
 
 ## Sample Code : Java
