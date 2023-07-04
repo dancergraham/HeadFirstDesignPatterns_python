@@ -15,6 +15,7 @@ I have added examples of pattern usage in the Python standard library and pypi -
 - [ ] [Factory Method](chapter04_factory)
 - [ ] [Simple Factory](chapter04_factory)
 - [x] [Abstract Factory](chapter04_factory)
+- [ ] [Builder](chapter04_factory#builder-%EF%B8%8F%EF%B8%8F) _(Bonus Pattern)_
 - [x] [Singleton](chapter05_singleton)
 - [x] [Command](chapter06_command)
 - [x] [Adapter](chapter07_adapter_facade)
