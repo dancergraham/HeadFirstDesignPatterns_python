@@ -43,6 +43,12 @@ classDiagram
 
 ```
 
+## Use in Python
+
+[Django signals]([url](https://docs.djangoproject.com/en/4.2/topics/signals/)https://docs.djangoproject.com/en/4.2/topics/signals/) 
+allow other parts of the code to sign up to receive updates, for instance when settings are changed  
+or model instances are created and / or updated.
+
 ## Running the code
 
 ```bash
