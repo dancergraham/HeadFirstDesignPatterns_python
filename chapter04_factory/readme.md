@@ -4,13 +4,14 @@
 
 > A class which chooses which product class to instantiate and return, based upon method parameters.
 
-### Pythonic Examples
+### Use in Python
 
 The Python standard library contains multiple references to factory objects, for instance
 [namedtuple](https://docs.python.org/3/library/collections.html#collections.namedtuple) 
 and [dataclasses](https://docs.python.org/3/library/dataclasses.html#module-dataclasses)
 are factories for creating classes.
-The Factory Boy package provides easy object creation for Django and for other ORMs.
+
+The [Factory Boy](https://github.com/FactoryBoy/factory_boy) package provides easy object creation for Django and for other ORMs.
 
 ## Factory Method 📋
 
@@ -20,7 +21,7 @@ The Factory Boy package provides easy object creation for Django and for other O
 For instance the `PizzaStore` abstract class in this repo provides an abstract `create_pizza` interface for creating one
 product.
 
-### Pythonic Examples
+### Use in Python
 
 The [python-qrcode](https://github.com/dancergraham/python-qrcode) module uses the factory method pattern nicely to
 separate only the part of the code that changes (generating png, svg, etc.) from the underlying logic of the code
