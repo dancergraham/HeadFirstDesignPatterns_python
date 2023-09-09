@@ -62,10 +62,10 @@ class Duck:
         raise NotImplementedError
 
     def perform_fly(self):
-        self._fly_behavior.fly()
+        self.fly_behavior.fly()
 
     def perform_quack(self):
-        self._quack_behavior.quack()
+        self.quack_behavior.quack()
 
     def swim(self):
         print("All ducks float, even decoys!")
