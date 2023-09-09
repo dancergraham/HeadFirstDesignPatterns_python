@@ -1,1 +1,2 @@
 playsound == 1.2.2
+pillow == 9.4.0
