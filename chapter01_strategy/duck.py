@@ -50,7 +50,12 @@ class Duck:
     def fly_behavior(self, fly_behavior):
         self._fly_behavior = fly_behavior
 
-    def set_quack_behavior(self, quack_behavior):
+    @property
+    def quack_behavior(self):
+        return self._quack_behavior
+
+    @quack_behavior.setter
+    def quack_behavior(self, quack_behavior):
         self._quack_behavior = quack_behavior
 
     def display(self):
