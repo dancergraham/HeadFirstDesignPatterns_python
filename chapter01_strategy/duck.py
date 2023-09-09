@@ -42,7 +42,12 @@ class Duck:
     _fly_behavior = None
     _quack_behavior = None
 
-    def set_fly_behavior(self, fly_behavior):
+    @property
+    def fly_behavior(self):
+        return self._fly_behavior
+
+    @fly_behavior.setter
+    def fly_behavior(self, fly_behavior):
         self._fly_behavior = fly_behavior
 
     def set_quack_behavior(self, quack_behavior):
@@ -108,7 +113,7 @@ def mini_duck_simulator():
 
     model = ModelDuck()
     model.perform_fly()
-    model.set_fly_behavior(FlyRocketPowered())
+    model.fly_behavior = FlyRocketPowered()
     model.perform_fly()
 
 
