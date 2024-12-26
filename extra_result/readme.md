@@ -18,6 +18,13 @@ classDiagram
     }
 ```
 
+## Running the code
+
+```bash
+python filereader.py
+```
+
+
 People often say you should use exceptions - "Easier to Ask Forgiveness than Permission" over guard clauses - "Look Before You Leap" but what about the Result design pattern - returning an object which explicitly states whether the operation succeeded (as used in Rust)?
 
 The requests library is often cited as a quintessentially pythonic library - the response object in requests (representing a HTTP response) is essentially a Result object.  The raise_for_status() method lets you use it with the EAFP philosophy.
