@@ -1,6 +1,6 @@
 # Head First Design Patterns python code
 
-<img src="images\learning.oreilly.jpg" alt="Head First Design Patterns Second Edition" width="200" align="right">Example code from [Head First Design Patterns second edition](https://www.wickedlysmart.com/head-first-design-patterns/) translated to python to help me understand and memorise the patterns.
+<img src="images\learning.oreilly.jpg" alt="Head First Design Patterns Second Edition" width="200" align="right">Example code from [Head First Design Patterns second edition](https://wickedlysmart.com/head-first-design-patterns/) translated to python to help me understand and memorise the patterns.
 
 I have added examples of pattern usage in the Python standard library and pypi - I am starting to see patterns everywhere!
 
