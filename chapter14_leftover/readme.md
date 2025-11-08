@@ -13,3 +13,7 @@ on those objects. Without a `Manager` object, multiple processes could try to ac
 or modify shared objects at the same time with unpredictable results.  
 It uses the `Proxy` design pattern, providing a proxy to the shared objects, to help 
 achieve this, passing messages and data across process boundaries.
+
+[Django Managers](https://docs.djangoproject.com/en/6.0/topics/db/managers/) allow table-level
+actions or custom querysets for a given django model, for instance giving easy access to standard
+filters, annotations or operations on multiple table rows / object instances.
